@@ -7,6 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="fino"
 
+export CLICOLOR=1
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -45,7 +47,7 @@ ZSH_THEME="fino"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails git-flow sublime autojump)
+plugins=(git rails git-flow sublime autojump zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
