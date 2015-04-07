@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="fino"
+ZSH_THEME="fino" #fino
 
 export CLICOLOR=1
 
@@ -78,11 +78,34 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="st ~/.zshrc"
-alias ohmyzsh="st ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias ....="cd .. && cd .. && cd .."
+alias b2d="boot2docker"
+alias b2dinit="\$(boot2docker shellinit)"
 
+alias slime='open -a "/Applications/Sublime Text.app"'
+alias l="ls -la"
+alias la="ls -a"
+alias gitrm="git diff --diff-filter=D --name-only -z | xargs -0 git rm"
+alias mysqldb="/Applications/MAMP/Library/bin/mysql"
+
+alias vbox="VBoxManage"
+alias rake="noglob rake"
+alias mrc="magerun cache:clean"
+alias mr:th="magerun dev:template-hints"
+alias mr="magerun"
+
+# fixes from the old class
+source $ZSH/oh-my-zsh.sh
+unsetopt correct_all
+
+# iMac path setup
+export PATH=$HOME/bin:$HOME/.bin:$HOME/.npm:$HOME/.rvm/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Applications/MAMP/Library/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin:$PATH
 
 php_bin=`grep "php5_module" ~/Library/Application\ Support/appsolute/MAMP\ PRO/httpd.conf | egrep -o "/.*/php\d+(.\d+)*"`
 export PATH="$php_bin/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
