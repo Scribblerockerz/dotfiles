@@ -95,6 +95,8 @@ alias rake="noglob rake"
 alias mrc="magerun cache:clean"
 alias mr:th="magerun dev:template-hints"
 alias mr="magerun"
+alias can="caniuse"
+alias scratch='for f in ~/Library/Preferences/WebIde90/scratches/*; do echo "\e[93m--------- EXECUTE: `basename $f` ---------\n\n\e[37m"; php -d display_errors $f; echo "\n\n"; done;'
 
 # fixes from the old class
 source $ZSH/oh-my-zsh.sh
@@ -107,5 +109,6 @@ php_bin=`grep "php5_module" ~/Library/Application\ Support/appsolute/MAMP\ PRO/h
 export PATH="$php_bin/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source ~/.nvm/nvm.sh
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
