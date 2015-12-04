@@ -96,7 +96,8 @@ alias mrc="magerun cache:clean"
 alias mr:th="magerun dev:template-hints"
 alias mr="magerun"
 alias can="caniuse"
-alias scratch='for f in ~/Library/Preferences/WebIde90/scratches/*; do echo "\e[93m--------- EXECUTE: `basename $f` ---------\n\n\e[37m"; php -d display_errors $f; echo "\n\n"; done;'
+alias encrypt="pbpaste | openssl aes-256-cbc -salt -a -e | base64 -b 0 | pbcopy"
+alias decrypt="pbpaste | base64 --decode | openssl aes-256-cbc -salt -a -d | pbcopy"
 
 # fixes from the old class
 source $ZSH/oh-my-zsh.sh
