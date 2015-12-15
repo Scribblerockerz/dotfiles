@@ -113,3 +113,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source ~/.nvm/nvm.sh
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
+echo 'Syncing ~/notes'
+$(cd ~/notes && git push origin master > /dev/null 2>&1)
