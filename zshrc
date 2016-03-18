@@ -96,6 +96,7 @@ alias mrc="magerun cache:clean"
 alias mr:th="magerun dev:template-hints"
 alias mr="magerun"
 alias can="caniuse"
+alias notes="vim ~/notes"
 alias encrypt="pbpaste | openssl aes-256-cbc -salt -a -e | base64 -b 0 | pbcopy"
 alias decrypt="pbpaste | base64 --decode | openssl aes-256-cbc -salt -a -d | pbcopy"
 
@@ -110,9 +111,14 @@ php_bin=`grep "php5_module" ~/Library/Application\ Support/appsolute/MAMP\ PRO/h
 export PATH="$php_bin/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-source ~/.nvm/nvm.sh
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
-echo 'Syncing ~/notes'
-$(cd ~/notes && git push origin master > /dev/null 2>&1)
+export NVM_DIR="/Users/jschroeder/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+
+# load local configuration
+if [ -f ~/.zshrc_local ]; then
+  source ~/.zshrc_local
+fi
